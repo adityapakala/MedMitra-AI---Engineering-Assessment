@@ -137,14 +137,23 @@ We used BLEU and ROUGE scores to evaluate the performance of the generated respo
    - This diagram shows how each AWS component interacts to create a seamless pipeline.
 ## Architecture Diagram 
 
+## AWS Deployment Architecture
+
 ```mermaid
 graph LR
   A[User Interface] --> B[API Gateway]
   B --> C[AWS Lambda]
   C --> D[AWS SageMaker]
-  
+  D --> E[(Amazon S3)]
+  C --> F[(DynamoDB)]
+  C --> G[CloudWatch]
+
   style A fill:#f9f,stroke:#333,stroke-width:4px
   style B fill:#bbf,stroke:#333,stroke-width:4px
   style C fill:#bbf,stroke:#333,stroke-width:4px
   style D fill:#bbf,stroke:#333,stroke-width:4px
+  style E fill:#bbf,stroke:#333,stroke-width:4px
+  style F fill:#bbf,stroke:#333,stroke-width:4px
+  style G fill:#bbf,stroke:#333,stroke-width:4px
+
 
